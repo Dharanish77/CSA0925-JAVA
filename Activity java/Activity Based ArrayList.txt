@@ -1,0 +1,57 @@
+package practice;
+import java.util.*;
+class Employee{
+	public String name;
+	public String designation;
+	public int salary;
+	Employee(String name,String designation,int salary){
+		this.name=name;
+		this.designation=designation;
+		this.salary=salary;
+	}
+}
+public class Main1 {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		ArrayList<Employee> AL=new ArrayList<>();
+		AL.add(new Employee("Ram","Manager",15000));
+		AL.add(new Employee("Kishore","GM",20000));
+		AL.add(new Employee("Doss","Assitant",30000));
+		System.out.println("Employee Details: ");
+		for(Employee e:AL) {
+			System.out.println("Name = "+e.name);
+			System.out.println("Designation = "+e.designation);
+			System.out.println("Salary = "+e.salary);
+			System.out.println();
+		}
+			
+			Employee highest=AL.get(0);
+			for(Employee e:AL) {
+				if(e.salary>highest.salary) {
+					highest=e;
+				}
+			}
+			System.out.println();
+			System.out.println("Highest Salary Employee: ");
+			System.out.println("Name = " +highest.name);
+	        System.out.println("Designation = " +highest.designation);
+	        System.out.println("Salary = " +highest.salary);
+	        System.out.println();
+	        System.out.println("Enter Employee Name: ");
+	        String search=sc.nextLine();
+	        boolean found = false;
+	        for(Employee e:AL) {
+	        	if(e.name.equalsIgnoreCase(search)) {
+	        		System.out.println("Founded");
+	        		System.out.println("Name = "+e.name);
+	        		System.out.println("Designation = "+e.designation);
+	        		System.out.println("Salary = "+e.salary);
+	        		found=true;
+	        		break;
+	        	}
+	        }
+	        if(!found) {
+	        	System.out.println("Not found");
+	        }
+	}
+}
