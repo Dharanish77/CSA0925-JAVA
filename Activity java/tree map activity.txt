@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        TreeMap<Integer, String> map = new TreeMap<>();
+
+        map.put(3, "Apple");
+        map.put(1, "Mango");
+        map.put(4, "Orange");
+        map.put(2, "Banana");
+
+        System.out.println("TreeMap: " + map);
+
+        System.out.println("Value of key 2: " + map.get(2));
+
+        map.remove(3);
+
+        System.out.println("After removing key 3: " + map);
+
+        System.out.println("First Key: " + map.firstKey());
+        System.out.println("Last Key: " + map.lastKey());
+    }
+}
+TreeMap: {1=Mango, 2=Banana, 3=Apple, 4=Orange}
+Value of key 2: Banana
+After removing key 3: {1=Mango, 2=Banana, 4=Orange}
+First Key: 1
+Last Key: 4
