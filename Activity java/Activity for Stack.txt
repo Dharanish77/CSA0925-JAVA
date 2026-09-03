@@ -1,0 +1,57 @@
+package practice;
+import java.util.*;
+
+public class stack {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        Stack<Integer> s = new Stack<>();
+
+        while (true) {
+
+            System.out.println("\n1.Push");
+            System.out.println("2.Pop");
+            System.out.println("3.Peek");
+            System.out.println("4.Display");
+            System.out.println("5.Exit");
+
+            System.out.print("Enter Choice : ");
+            int ch = sc.nextInt();
+
+            switch (ch) {
+
+                case 1:
+                    System.out.print("Enter Number : ");
+                    int n = sc.nextInt();
+                    s.push(n);
+                    System.out.println("Inserted");
+                    break;
+
+                case 2:
+                    if (s.isEmpty())
+                        System.out.println("Stack Empty");
+                    else
+                        System.out.println("Removed : " + s.pop());
+                    break;
+
+                case 3:
+                    if (s.isEmpty())
+                        System.out.println("Stack Empty");
+                    else
+                        System.out.println("Top : " + s.peek());
+                    break;
+
+                case 4:
+                    System.out.println(s);
+                    break;
+
+                case 5:
+                    System.exit(0);
+
+                default:
+                    System.out.println("Invalid Choice");
+            }
+        }
+    }
+}
